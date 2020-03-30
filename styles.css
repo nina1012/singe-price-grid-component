@@ -1,0 +1,143 @@
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  /* neutral */
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Karla', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6eff6;
+}
+
+.card {
+  width: 70rem;
+  /* width: 55vmax; */
+  height: fit-content;
+  box-shadow: 0 0 1.5rem 1px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  display: grid;
+  overflow: hidden;
+}
+
+.section {
+  padding: 4rem;
+}
+
+/* styling for upper and all elements that matter h2,h4 and p */
+.upper-row {
+  background-color: white;
+}
+
+h2 {
+  color: var(--cyan);
+  font-size: 3rem;
+  letter-spacing: -1px;
+  margin-bottom: 2rem;
+}
+
+h4 {
+  color: var(--light-gray);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+h4.darker {
+  color: var(--bright-yellow);
+}
+
+p {
+  font-size: 1.8rem;
+  color: var(--light-gray);
+  line-height: 1.5;
+}
+p.darker {
+  color: var(--grayish-blue);
+}
+
+/* lower row and inherited styling from upper-row */
+
+.lower-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.left {
+  background-color: var(--cyan);
+}
+
+.monthly-dollar {
+  display: flex;
+  align-items: center;
+  color: var(--light-gray);
+}
+
+#price {
+  font-size: 3rem;
+  opacity: 1;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+.faded {
+  opacity: 0.6;
+  font-size: 1.3rem;
+}
+.button {
+  background-color: var(--bright-yellow);
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  bottom: 0;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  padding: 1.5rem 4rem;
+  width: 100%;
+  text-transform: capitalize;
+  margin-top: 5.6rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+.button:hover,
+.button:focus {
+  transform: translateY(2px);
+  outline: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.right {
+  background-color: var(--cyan);
+  filter: opacity(80%);
+}
+
+@media only screen and (max-width: 725px) and (min-width: 375px) {
+  html {
+    font-size: 50%;
+  }
+
+  .card {
+    max-width: 40rem;
+    width: 80vw;
+    margin: 10rem auto;
+  }
+  .lower-row {
+    grid-template-columns: 1fr;
+  }
+}
